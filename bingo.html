@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CódigoLyoko</title>
+    <link rel="stylesheet" href="stylesbingo.css" />
+    <link rel="icon" href="Imagenes\logo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <a href="bingoing.html" class="top-right-link">
+      <img
+        src="https://cdn.pixabay.com/photo/2012/04/10/16/14/union-jack-26119_1280.png"
+        alt="Descripción de la imagen"
+      />
+    </a>
+    <div id="tituloSubpaginas">
+      <header>
+        <h1 style="background-color: rgba(0, 0, 0, 0)">Descargar Bingo</h1>
+      </header>
+
+      <ul class="subpaginas">
+        <a href="inicio.html">Inicio</a>
+        <a href="bingo.html">Descargar Bingo</a>
+        <a href="contacto.html">Contacto</a>
+      </ul>
+    </div>
+
+    <div id="iz">
+      <h1>Último lanzamiento</h1>
+      <p>
+        Nos complace presentar nuestro último lanzamiento: Bingo Online. Se
+        trata de una versión renovada del clásico juego de bingo, adaptada para
+        el mundo digital, que permite a cada jugador disfrutar de una
+        experiencia personalizada en su propio dispositivo. Con esta versión,
+        hemos integrado una serie de mejoras para asegurar que cada partida sea
+        dinámica, accesible y altamente entretenida. Ahora, ya no es necesario
+        compartir un único tablero físico: cada jugador puede participar con su
+        propio ordenador. Esta modalidad garantiza que el juego sea más cómodo,
+        interactivo y adaptable a distintas necesidades, permitiendo que amigos
+        y familiares se reúnan y disfruten juntos sin importar la distancia.
+      </p>
+      <br />
+      <h1>Cómo Jugar</h1>
+      <p>
+        Tiene un funcionamiento simple, empieza con una pestaña para introducir
+        tu nombre, una vez introducido se te generará un cartón de 3 líneas y 10
+        columnas de las cuales solo en las primeras 9 habrá números con números
+        aleatorios (números del 1 al 90) y unas casillas vacías también
+        aleatorias. Está preparado para que en cada fila haya 5 números. Se
+        pueden ir tachando los números pulsando encima de ellos. Línea: Una vez
+        tengas línea puedes pulsar el botón de la izquierda que pone “Línea” y
+        verifica si la línea es correcta o no. Si no es correcta se te
+        penalizará bloqueando el botón “Línea” durante 5 segundos. Si la línea
+        es correcta se abrirá una pestaña con una pregunta y varias respuestas.
+        Si fallas te enseñará cuál es la respuesta correcta con un color verde y
+        no tendrás la línea así que otro jugador la podrá hacer. Mientras
+        respondes la pregunta se para el juego así que no tienes que responder
+        rápido.
+      </p>
+      <br />
+
+      <h2>Host</h2>
+      <p>
+        El dispositivo asignado como Host desempeña un papel fundamental en el
+        desarrollo del juego. En la pantalla del Host, aparecerá un tablero
+        virtual con las 100 bolas numeradas del 1 al 100, que representa el
+        conjunto completo de posibles resultados. A medida que el anfitrión va
+        extrayendo las bolas, estos números se irán tachando automáticamente, lo
+        que facilita el seguimiento de las bolas que ya han salido y las que
+        están aún por aparecer. Además, el Host cuenta con un botón de
+        “Siguiente bola”, que permite avanzar de forma controlada en cada ronda,
+        asegurando que los jugadores tengan tiempo de localizar y marcar los
+        números en sus tableros antes de continuar. Esta herramienta proporciona
+        un control total sobre el ritmo del juego, permitiendo una experiencia
+        divertida y sin interrupciones.
+      </p>
+      <a href="Imagenes\Bombo.jar" download="Bombo.jar" target="_blank">
+        <button>Descargar juego Host</button>
+      </a>
+      <br />
+
+      <h2>Usuario</h2>
+      <p>
+        Para el jugador, el dispositivo actúa como su tablero personal de bingo.
+        Al iniciar, se pedirá al usuario que elija un nombre único para
+        identificarse dentro de la partida (esto es importante para
+        diferenciarse de otros jugadores en el mismo juego). Una vez ingresado
+        el nombre, el jugador verá su propio cartón de bingo, con una
+        combinación aleatoria de números que debe marcar a medida que el Host
+        anuncia las bolas extraídas. Los jugadores podrán utilizar botones para
+        marcar o desmarcar los números seleccionados en su cartón, lo que
+        facilita el seguimiento de las jugadas. Cuando el cartón del jugador
+        esté completo con una línea, columna o patrón especial, podrá presionar
+        el botón de “¡Bingo!” para anunciar su victoria. En caso de error, no
+        pasa nada: el juego está diseñado para ser flexible, y puedes seguir
+        jugando sin penalización. Además, el sistema de verificación evita que
+        se anuncie un bingo incorrecto, manteniendo la integridad del juego para
+        todos los participantes.
+      </p>
+      <br />
+      <img src="Imagenes\Explicacion.png" alt="" style="width: 50%" />
+      <br />
+      <a href="Imagenes\Carton.jar" download="Carton.jar" target="_blank">
+        <button>Descargar juego usuario</button>
+      </a>
+    </div>
+  </body>
+
+
+  <body>
+    <div id="popup" class="hidden">
+      <span id="xboton">&times;</span>
+      <div id="content">
+        <img src="Imagenes/X.png" alt="Imagen" class="popup-img" />
+        <p class="mensaje-texto"></p>
+      </div>
+    </div>
+
+    <script>
+      function mostrarMensaje() {
+        const numeroAleatorio = Math.floor(Math.random() * 5) + 1;
+        const popup = document.getElementById("popup");
+        const mensajeTexto = document.querySelector(".mensaje-texto");
+        const cuadradoRojo = document.querySelector(".cuadrado-rojo");
+        const imagenPopup = document.querySelector(".popup-img");
+
+        const posicionX = Math.floor(Math.random() * (10 - -110 + 1)) + -110;
+        const posicionY = Math.floor(Math.random() * (450 - -140 + 1)) + -110;
+
+        popup.style.transform = `translate(${posicionX}%, ${posicionY}%)`;
+
+        // Mostrar el popup y asignar contenido
+        popup.classList.remove("hidden");
+
+        // Ajustar el contenido del mensaje en función del número aleatorio
+        if (numeroAleatorio === 1) {
+          imagenPopup.src = "Imagenes/anderepico.png";
+          mensajeTexto.innerText = "Estate un 90% atento en clase gracias a este truco";
+          popup.style.backgroundColor = "rgba(208, 9, 9, 1)";
+          popup.style.border = "5px solid rgba(124, 6, 6, 1)";
+        } else if (numeroAleatorio === 2) {
+          imagenPopup.src = "Imagenes/sergio.png";
+          mensajeTexto.innerText = "Invierte en acciones de AWS";
+          popup.style.backgroundColor = "rgba(255, 167, 0, 1)";
+          popup.style.border = "5px solid rgba(230, 150, 0, 1)";
+        } else if (numeroAleatorio === 3) {
+          imagenPopup.src = "Imagenes/robert.png";
+          mensajeTexto.innerText = "Suscribete a nuestros cursos de java";
+          popup.style.backgroundColor = "rgba(80, 200, 0, 1)";
+          popup.style.border = "5px solid rgba(70, 174, 0, 1)";
+        } else if (numeroAleatorio === 4) {
+          imagenPopup.src = "Imagenes/paloma.png";
+          mensajeTexto.innerText = "Aprende ingles en 2 semanas";
+          popup.style.backgroundColor = "rgba(0, 0, 157, 1)";
+          popup.style.border = "5px solid rgba(0, 0, 131, 1)";
+        } else {
+          imagenPopup.src = "Imagenes/javi.png";
+          mensajeTexto.innerText = "Sube tu pagina a Hostinger y verás los resultados";
+          popup.style.backgroundColor = "rgba(0, 200, 200, 1)";
+          popup.style.border = "5px solid rgba(0, 174, 174, 1)";
+        }
+      }
+      setInterval(mostrarMensaje, 15000);
+      // Cerrar el popup "x"
+      document.getElementById("xboton").addEventListener("click", function () {
+        document.getElementById("popup").classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>
