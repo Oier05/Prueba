@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CódigoLyoko</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="Imagenes\logo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <a href="inicioing.html" class="top-right-link">
+      <img
+        src="https://cdn.pixabay.com/photo/2012/04/10/16/14/union-jack-26119_1280.png"
+        alt="Descripción de la imagen"
+      />
+    </a>
+    <div id="tituloSubpaginas">
+      <header>
+        <h1 style="background-color: rgba(0, 0, 0, 0)">CódigoLyoko</h1>
+      </header>
+
+      <ul class="subpaginas">
+        <a href="inicio.html">Inicio</a>
+        <a href="bingo.html">Descargar Bingo</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="hola.html">Hola</a>
+      </ul>
+    </div>
+
+    <div id="contenedor">
+      <div id="iz">
+        <h2>Sobre Nosotros</h2>
+        <p>
+            CódigoLyoko-n, esperientzia digital bakarrak sortzeko konpromisoa eta pasioa duen taldea gara. Software garapenean, diseinu grafikoan eta marketin digitalean espezializatuta gaude, kalitate handiena bermatzeko teknologia aurreratuak aplikatuz. Gure ikuspegia bezeroei mundu digitalean nabigatzen laguntzea da, irtenbide pertsonalizatuak eskainiz. Diziplina anitzeko talde bat dugu, proiektu bakoitza hurrengo mailara eramateko elkarlanean aritzen dena. Teknologiaren pasioak mugitzen gaitu eta aldea markatuko duten produktuak eta zerbitzuak sortzeko lan egiten dugu. Komunikazio irekia eta gardena baloratzen dugu, gure bezeroekin eskuz esku lan eginez, haien itxaropenak betetzeko eta epe luzerako harremanak eraikitzeko.
+        </p>
+        <br />
+        <h2>Nuestra Misión</h2>
+        <p>
+            Nuestra misión en CódigoLyoko es transformar ideas en soluciones
+            digitales que mejoren la vida de las personas y empresas. Nos
+            enfocamos en comprender las necesidades de cada cliente para crear
+            estrategias que superen sus expectativas. Buscamos inspirar innovación
+            y creatividad, impulsando a nuestros clientes hacia el éxito en un
+            mercado digital en constante cambio.
+        </p>
+        <br />
+        <h2>Valores</h2>
+        <p>
+            En CódigoLyoko, nuestros valores son integridad, calidad, colaboración
+            e innovación. Actuamos con transparencia, entregamos productos de
+            excelencia, fomentamos la colaboración y promovemos la creatividad.
+            Nos comprometemos a ofrecer soluciones efectivas y adaptadas a las
+            necesidades de nuestros clientes, creando una experiencia de
+            colaboración y aprendizaje mutuo.
+        </p>
+      </div>
+
+      <div id="dr">
+        <h1 style="font-size: 300%">Lanzamientos</h1>
+        <h2>CódigoLyoko</h2>
+        <img src="Imagenes\cd.jpg" alt="" style="width: 80%" />
+        <p>
+          Un juego de aventuras basado en la serie animada, donde los jugadores
+          luchan en un mundo virtual para salvar a sus amigos y combatir a los
+          antagonistas.
+        </p>
+
+        <h2>Plantas VS Zombies</h2>
+        <img src="Imagenes\plantas.jpg" alt="" style="width: 80%" />
+        <p>
+          Un juego de estrategia donde los jugadores colocan plantas para
+          defender su casa de hordas de zombis, utilizando diversas plantas con
+          habilidades únicas para detenerlos.
+        </p>
+
+        <h2>Bingo Online</h2>
+        <img src="Imagenes\Bingo.jpg" alt="" style="width: 80%" />
+        <p>
+          Un juego de azar donde los jugadores marcan números en cartones
+          virtuales a medida que se anuncian. El objetivo es completar líneas o
+          cartones y ganar premios. Ofrece diversas variantes y opciones
+          multijugador, permitiendo jugar desde cualquier lugar con conexión a
+          internet.
+        </p>
+      </div>
+    </div>
+  </body>
+
+  <body>
+    <div id="popup" class="hidden">
+      <span id="xboton">&times;</span>
+      <div id="content">
+        <img src="Imagenes/X.png" alt="Imagen" class="popup-img" />
+        <p class="mensaje-texto"></p>
+      </div>
+    </div>
+
+    <script>
+      function mostrarMensaje() {
+        const numeroAleatorio = Math.floor(Math.random() * 5) + 1;
+        const popup = document.getElementById("popup");
+        const mensajeTexto = document.querySelector(".mensaje-texto");
+        const cuadradoRojo = document.querySelector(".cuadrado-rojo");
+        const imagenPopup = document.querySelector(".popup-img");
+
+        const posicionX = Math.floor(Math.random() * (10 - -110 + 1)) + -110;
+        const posicionY = Math.floor(Math.random() * (450 - -140 + 1)) + -110;
+
+        popup.style.transform = `translate(${posicionX}%, ${posicionY}%)`;
+
+        // Mostrar el popup y asignar contenido
+        popup.classList.remove("hidden");
+
+        // Ajustar el contenido del mensaje en función del número aleatorio
+        if (numeroAleatorio === 1) {
+          imagenPopup.src = "Imagenes/anderepico.png";
+          mensajeTexto.innerText =
+            "Estate un 90% atento en clase gracias a este truco";
+          popup.style.backgroundColor = "rgba(208, 9, 9, 1)";
+          popup.style.border = "5px solid rgba(124, 6, 6, 1)";
+        } else if (numeroAleatorio === 2) {
+          imagenPopup.src = "Imagenes/sergio.png";
+          mensajeTexto.innerText = "Invierte en acciones de AWS";
+          popup.style.backgroundColor = "rgba(255, 167, 0, 1)";
+          popup.style.border = "5px solid rgba(230, 150, 0, 1)";
+        } else if (numeroAleatorio === 3) {
+          imagenPopup.src = "Imagenes/robert.png";
+          mensajeTexto.innerText = "Suscribete a nuestros cursos de java";
+          popup.style.backgroundColor = "rgba(80, 200, 0, 1)";
+          popup.style.border = "5px solid rgba(70, 174, 0, 1)";
+        } else if (numeroAleatorio === 4) {
+          imagenPopup.src = "Imagenes/paloma.png";
+          mensajeTexto.innerText = "Aprende ingles en 2 semanas";
+          popup.style.backgroundColor = "rgba(0, 0, 157, 1)";
+          popup.style.border = "5px solid rgba(0, 0, 131, 1)";
+        } else {
+          imagenPopup.src = "Imagenes/javi.png";
+          mensajeTexto.innerText =
+            "Sube tu pagina a Hostinger y verás los resultados";
+          popup.style.backgroundColor = "rgba(0, 200, 200, 1)";
+          popup.style.border = "5px solid rgba(0, 174, 174, 1)";
+        }
+      }
+      setInterval(mostrarMensaje, 15000);
+      // Cerrar el popup "x"
+      document.getElementById("xboton").addEventListener("click", function () {
+        document.getElementById("popup").classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>

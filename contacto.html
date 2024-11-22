@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CódigoLyoko</title>
+    <link rel="stylesheet" href="stylecontacto.css">
+    <link rel="icon" href="Imagenes\logo.png" type="image/x-icon">
+</head>
+<body>
+
+    <a href="contactoing.html" class="top-right-link">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" alt="Descripción de la imagen">
+    </a>
+    
+    <div id="tituloSubpaginas">
+
+   <header>
+    <h1 style="background-color: rgba(0, 0, 0, 0)">Contacto</h1>
+   </header>
+
+    <ul class="subpaginas">
+        <a href="inicio.html">Inicio</a>
+        <a href="bingo.html">Descargar Bingo</a>
+        <a href="contacto.html">Contacto</a>
+    </ul>
+</div>
+
+<div id="contenedor">
+    <div id="iz">
+    
+    <h2>Como Encontrarnos</h2>
+    <p>Dispones de diferentes formas de contactar con nostros, ya sea online o presencial, aunque si quieres contratarmos recomendamos presencialmente o por correo.</p>
+    </div>
+
+
+    <div id="dr">
+        <h1>Redes sociales</h1>
+
+           <div id="contenedordr"></div>
+            <div id="driz">
+                <a href="https://www.tiktok.com/@codigo.lyoko" target="_blank">codigo.lyoko</a>
+                <br>
+                <a href="https://x.com/CodigoLyoko_Esp" target="_blank">@CodigoLyoko_Esp</a>
+                <br>
+                <a href="https://www.instagram.com/codigo_lyoko__/" target="_blank">codigo_lyoko__</a>
+            </div>
+
+            <div id="drdr">
+            <img src="Imagenes\tiktok.png" alt="">
+            <br>
+            <img src="Imagenes\X.png" alt="">
+            <br>
+            <img src="Imagenes\instagram.png" alt="">
+            <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="contenedordos">
+<h1>Ubicación</h1>
+<div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1057.3316955993755!2d-2.9239784280820573!3d43.26296052161317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e4fcf5135e14b%3A0xe1697e37e56e8887!2sC.%20Sendeja%2C%20Ibaiondo%2C%2048007%20Bilbao%2C%20Vizcaya!5e0!3m2!1ses!2ses!4v1730712409463!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+
+</div>
+</body>
+
+
+<body>
+    <div id="popup" class="hidden">
+      <span id="xboton">&times;</span>
+      <div id="content">
+        <img src="Imagenes/X.png" alt="Imagen" class="popup-img" />
+        <p class="mensaje-texto"></p>
+      </div>
+    </div>
+
+    <script>
+      function mostrarMensaje() {
+        const numeroAleatorio = Math.floor(Math.random() * 5) + 1;
+        const popup = document.getElementById("popup");
+        const mensajeTexto = document.querySelector(".mensaje-texto");
+        const cuadradoRojo = document.querySelector(".cuadrado-rojo");
+        const imagenPopup = document.querySelector(".popup-img");
+
+        const posicionX = Math.floor(Math.random() * (10 - -110 + 1)) + -110;
+        const posicionY = Math.floor(Math.random() * (450 - -140 + 1)) + -110;
+
+        popup.style.transform = `translate(${posicionX}%, ${posicionY}%)`;
+
+        // Mostrar el popup y asignar contenido
+        popup.classList.remove("hidden");
+
+        // Ajustar el contenido del mensaje en función del número aleatorio
+        if (numeroAleatorio === 1) {
+          imagenPopup.src = "Imagenes/anderepico.png";
+          mensajeTexto.innerText = "Estate un 90% atento en clase gracias a este truco";
+          popup.style.backgroundColor = "rgba(208, 9, 9, 1)";
+          popup.style.border = "5px solid rgba(124, 6, 6, 1)";
+        } else if (numeroAleatorio === 2) {
+          imagenPopup.src = "Imagenes/sergio.png";
+          mensajeTexto.innerText = "Invierte en acciones de AWS";
+          popup.style.backgroundColor = "rgba(255, 167, 0, 1)";
+          popup.style.border = "5px solid rgba(230, 150, 0, 1)";
+        } else if (numeroAleatorio === 3) {
+          imagenPopup.src = "Imagenes/robert.png";
+          mensajeTexto.innerText = "Suscribete a nuestros cursos de java";
+          popup.style.backgroundColor = "rgba(80, 200, 0, 1)";
+          popup.style.border = "5px solid rgba(70, 174, 0, 1)";
+        } else if (numeroAleatorio === 4) {
+          imagenPopup.src = "Imagenes/paloma.png";
+          mensajeTexto.innerText = "Aprende ingles en 2 semanas";
+          popup.style.backgroundColor = "rgba(0, 0, 157, 1)";
+          popup.style.border = "5px solid rgba(0, 0, 131, 1)";
+        } else {
+          imagenPopup.src = "Imagenes/javi.png";
+          mensajeTexto.innerText = "Sube tu pagina a Hostinger y verás los resultados";
+          popup.style.backgroundColor = "rgba(0, 200, 200, 1)";
+          popup.style.border = "5px solid rgba(0, 174, 174, 1)";
+        }
+      }
+      setInterval(mostrarMensaje, 15000);
+      // Cerrar el popup "x"
+      document.getElementById("xboton").addEventListener("click", function () {
+        document.getElementById("popup").classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>

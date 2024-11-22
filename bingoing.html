@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CódigoLyoko</title>
+    <link rel="stylesheet" href="stylesbingo.css" />
+    <link rel="icon" href="Imagenes\logo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <a href="bingo.html" class="top-right-link">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1200px-Bandera_de_Espa%C3%B1a.svg.png"
+        alt="Descripción de la imagen"
+      />
+    </a>
+
+    <div id="tituloSubpaginas">
+      <header>
+        <h1 style="background-color: rgba(0, 0, 0, 0)">Download Bingo</h1>
+      </header>
+
+      <ul class="subpaginas">
+        <a href="inicioing.html">Home</a>
+        <a href="bingoing.html">Download Bingo</a>
+        <a href="contactoing.html">Contact us</a>
+      </ul>
+    </div>
+
+    <div id="iz">
+      <h1>Last Release</h1>
+      <p>
+        We are pleased to present our latest release: Bingo Online. This is a
+        revamped version of the classic bingo game, adapted for the digital
+        world, allowing each player to enjoy a personalized experience on their
+        own device. With this version, we have integrated a series of
+        improvements to ensure that each game is dynamic, accessible, and highly
+        entertaining. Now, it is no longer necessary to share a single physical
+        board: each player can participate with their own computer. This
+        modality ensures that the game is more comfortable, interactive, and
+        adaptable to different needs, allowing friends and family to gather and
+        enjoy together regardless of the distance.
+      </p>
+      <br />
+      <br />
+      <h1>How to Play</h1>
+      <p>
+        It has a simple operation, starting with a tab to enter your name. Once
+        entered, a card with 3 lines and 10 columns will be generated, with only
+        the first 9 columns containing random numbers (numbers from 1 to 90) and
+        some random empty spaces. It is designed so that each row has 5 numbers.
+        You can mark the numbers by clicking on them. Line: Once you have a
+        line, you can press the button on the left that says "Line" and it will
+        verify if the line is correct or not. If it is not correct, you will be
+        penalized by blocking the "Line" button for 5 seconds. If the line is
+        correct, a tab will open with a question and several answers. If you
+        fail, it will show you the correct answer in green and you will not have
+        the line, so another player can make it. While you answer the question,
+        the game stops, so you don't have to answer quickly.
+      </p>
+
+      <h2>Host</h2>
+      <p>
+        The device assigned as Host plays a fundamental role in the development
+        of the game. On the Host's screen, a virtual board will appear with 100
+        balls numbered from 1 to 100, representing the complete set of possible
+        outcomes. As the host draws the balls, these numbers will be
+        automatically crossed out, making it easy to track the balls that have
+        already been drawn and those that are yet to appear. Additionally, the
+        Host has a "Next Ball" button, which allows controlled progression in
+        each round, ensuring that players have time to locate and mark the
+        numbers on their boards before continuing. This tool provides complete
+        control over the pace of the game, allowing for a fun and uninterrupted
+        experience.
+      </p>
+      <a href="Imagenes\Bombo.jar" download="Bombo.jar" target="_blank">
+        <button>Download Host Game</button>
+      </a>
+      <br />
+
+      <h2>User</h2>
+      <p>
+        For the player, the device acts as their personal bingo board. At the
+        start, the user will be asked to choose a unique name to identify
+        themselves within the game (this is important to differentiate from
+        other players in the same game). Once the name is entered, the player
+        will see their own bingo card, with a random combination of numbers that
+        they must mark as the Host announces the drawn balls. Players can use
+        buttons to mark or unmark the selected numbers on their card, making it
+        easy to keep track of the plays. When the player's card is complete with
+        a line, column, or special pattern, they can press the "Bingo!" button
+        to announce their victory. In case of an error, nothing happens: the
+        game is designed to be flexible, and you can continue playing without
+        penalty. Additionally, the verification system prevents an incorrect
+        bingo from being announced, maintaining the integrity of the game for
+        all participants.
+      </p>
+      <br />
+      <img src="Imagenes\Explicacioning.png" alt="" />
+      <br />
+      <a href="Imagenes\Carton.jar" download="Carton.jar" target="_blank">
+        <button>Download User Game</button>
+      </a>
+    </div>
+  </body>
+
+
+  <body>
+    <div id="popup" class="hidden">
+      <span id="xboton">&times;</span>
+      <div id="content">
+        <img src="Imagenes/X.png" alt="Imagen" class="popup-img" />
+        <p class="mensaje-texto"></p>
+      </div>
+    </div>
+
+    <script>
+      function mostrarMensaje() {
+        const numeroAleatorio = Math.floor(Math.random() * 5) + 1;
+        const popup = document.getElementById("popup");
+        const mensajeTexto = document.querySelector(".mensaje-texto");
+        const cuadradoRojo = document.querySelector(".cuadrado-rojo");
+        const imagenPopup = document.querySelector(".popup-img");
+
+        const posicionX = Math.floor(Math.random() * (10 - -110 + 1)) + -110;
+        const posicionY = Math.floor(Math.random() * (450 - -140 + 1)) + -110;
+
+        popup.style.transform = `translate(${posicionX}%, ${posicionY}%)`;
+
+        // Mostrar el popup y asignar contenido
+        popup.classList.remove("hidden");
+
+        // Ajustar el contenido del mensaje en función del número aleatorio
+        if (numeroAleatorio === 1) {
+          imagenPopup.src = "Imagenes/anderepico.png";
+          mensajeTexto.innerText = "Estate un 90% atento en clase gracias a este truco";
+          popup.style.backgroundColor = "rgba(208, 9, 9, 1)";
+          popup.style.border = "5px solid rgba(124, 6, 6, 1)";
+        } else if (numeroAleatorio === 2) {
+          imagenPopup.src = "Imagenes/sergio.png";
+          mensajeTexto.innerText = "Invierte en acciones de AWS";
+          popup.style.backgroundColor = "rgba(255, 167, 0, 1)";
+          popup.style.border = "5px solid rgba(230, 150, 0, 1)";
+        } else if (numeroAleatorio === 3) {
+          imagenPopup.src = "Imagenes/robert.png";
+          mensajeTexto.innerText = "Suscribete a nuestros cursos de java";
+          popup.style.backgroundColor = "rgba(80, 200, 0, 1)";
+          popup.style.border = "5px solid rgba(70, 174, 0, 1)";
+        } else if (numeroAleatorio === 4) {
+          imagenPopup.src = "Imagenes/paloma.png";
+          mensajeTexto.innerText = "Aprende ingles en 2 semanas";
+          popup.style.backgroundColor = "rgba(0, 0, 157, 1)";
+          popup.style.border = "5px solid rgba(0, 0, 131, 1)";
+        } else {
+          imagenPopup.src = "Imagenes/javi.png";
+          mensajeTexto.innerText = "Sube tu pagina a Hostinger y verás los resultados";
+          popup.style.backgroundColor = "rgba(0, 200, 200, 1)";
+          popup.style.border = "5px solid rgba(0, 174, 174, 1)";
+        }
+      }
+      setInterval(mostrarMensaje, 15000);
+      // Cerrar el popup "x"
+      document.getElementById("xboton").addEventListener("click", function () {
+        document.getElementById("popup").classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>
